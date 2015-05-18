@@ -1,6 +1,6 @@
 	  //-----------------------general information---------------------------
 	  // this is a map program that create key value, this value has that word and the number 1 in a list of tupla
-	  // create: Mario Jiménez García
+	  // create: Mario JimÃ©nez GarcÃ­a
 	  // the last update 13-05-2015
 	  // name of mapper: map_words.java class
 	  //---------------------------------------------------------------------
@@ -10,30 +10,7 @@
 
 	String []value_compare = new String[4];                                                        //arrray to string in to save the word to reject
 	
-	try{
-	    Path pt=new Path("/user/training/datas");                                                 //the hdfs storage path in clouster hadoop
-	    FileSystem fs = FileSystem.get(new Configuration());                                      //open file
-	    BufferedReader br=new BufferedReader(new InputStreamReader(fs.open(pt)));                 // open buffer to store data
-	    String liner;                                                                             // variable to save line about the flat file
-  	    liner=br.readLine();                                                                      //read the first line
-	    int cont=0;                                                                               //run a counter because I need a point in the array
-	    //-------------------------start to read a file that words that not need to use
-	    while (liner != null)                                                                     //identify the end of line
-	    {
-	    	if (liner.length() > 0)                                                               //identify that no this a blank space
-	        {
-	    		
-	    	value_compare[cont]=liner;                                                            //store the word in the array
-	    	cont++;                                                                               //increase the counter
-	  	    	
-	        }
-	    	 liner=br.readLine();                                                                 //next line
-	    }
-        }catch(Exception e)                                                                       //catch some error in the map program
-        {
-  	      System.out.printf("error:-----"+e.toString());
-    	      System.exit(-1);
-        }
+
 
     boolean encontre=false;                                                                      //flag to identify if found a word in the list
 
